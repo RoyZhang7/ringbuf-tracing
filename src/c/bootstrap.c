@@ -132,7 +132,7 @@ int main(int argc, char **argv)
 	signal(SIGINT, sig_handler);
 	signal(SIGTERM, sig_handler);
 
-	/* Load and verify BPF application */
+	/* Open, Load and verify BPF application */
 	skel = bootstrap_bpf__open();
 	if (!skel) {
 		fprintf(stderr, "Failed to open and load BPF skeleton\n");
