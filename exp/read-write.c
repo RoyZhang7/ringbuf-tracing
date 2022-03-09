@@ -9,8 +9,8 @@
 #define TEST_CNT          (100)
 #define TEST_BUF_SIZE     (1024*1024)
  
-static char readFile[] = "./read.file";
-static char writeFile[] = "./write.file";
+static char readFile[] = "./pi-1000";
+static char writeFile[] = "./writefile";
 static unsigned char testBuf[TEST_BUF_SIZE+10];
  
 int speedTest(void)
