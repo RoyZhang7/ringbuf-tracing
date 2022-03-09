@@ -6,7 +6,7 @@
 #include <sys/time.h>
 #include <sys/types.h>
  
-#define TEST_CNT          (100)
+#define TEST_CNT          (1000)
 #define TEST_BUF_SIZE     (1024*1024)
  
 static char readFile[] = "./pi-1000";
@@ -15,7 +15,7 @@ static unsigned char testBuf[TEST_BUF_SIZE+10];
  
 int speedTest(void)
 {
-    //1.read data
+    //read data
     int fd_read = open(readFile, O_RDONLY);
     if (fd_read == -1)
     {
@@ -26,7 +26,7 @@ int speedTest(void)
     printf("read %d byte.\n", tmp);
     close(fd_read);
  
-    //2.write data and get write used time
+    //write data and record time
     int fd_write = open(writeFile, O_CREAT | O_RDWR);
     if (fd_write == -1)
     {
