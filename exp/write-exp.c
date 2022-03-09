@@ -6,10 +6,10 @@
 #include <sys/time.h>
 #include <sys/types.h>
  
-#define TEST_CNT          (1000)
+#define TEST_CNT          (2500)
 #define TEST_BUF_SIZE     (1024*1024)
  
-static char readFile[] = "./pi-1000";
+static char readFile[] = "./pi-1m";
 static char writeFile[] = "./writefile";
 static unsigned char testBuf[TEST_BUF_SIZE+10];
  
@@ -43,11 +43,9 @@ int speedTest(void)
     gettimeofday(&endTime, NULL);
  
     //3.calculate speed
-    int writeTotalSize = TEST_BUF_SIZE * TEST_CNT;
     int writeTotalTime = (endTime.tv_sec * 1000000 + endTime.tv_usec) - (startTime.tv_sec * 1000000 + startTime.tv_usec);
  
-    printf("writeTotalSize:%f MB, writeTotalTime:%f s, writeSpeed = %f MB/s.\n",
-        (float)writeTotalSize/1024/1024, (float)writeTotalTime/1000000, ((float)writeTotalSize/1024/1024)/(writeTotalTime/1000000));
+    printf("writeTotalTime:%f s.\n", (float)writeTotalTime/1000000);
  
     close(fd_write);
     remove(writeFile);

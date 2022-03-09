@@ -1,3 +1,4 @@
 /syscall
-pi-100
-pi-1000
+/*-syscall
+/*-ringbuf
+pi*
